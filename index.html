@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SpendWise - Smart Budget Tracker</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>SpendWise</h1>
+        <p>Smart budgeting made simple.</p>
+    </header>
+
+    <main>
+
+        <!-- Budget Form -->
+        <section class="card">
+            <h2>Set Your Monthly Budget</h2>
+
+            <form id="budgetForm">
+
+                <label for="budgetInput">
+                    Monthly Budget (KES)
+                </label>
+
+                <input
+                    type="number"
+                    id="budgetInput"
+                    placeholder="Enter your budget"
+                    min="0"
+                    step="0.01"
+                    required
+                >
+
+                <button type="submit">
+                    Set Budget
+                </button>
+
+            </form>
+        </section>
+
+
+        <!-- Dashboard -->
+        <section class="dashboard">
+
+            <div class="card">
+                <h3>Budget</h3>
+                <p id="budgetDisplay">KES 0.00</p>
+            </div>
+
+            <div class="card">
+                <h3>Total Spent</h3>
+                <p id="spentDisplay">KES 0.00</p>
+            </div>
+
+            <div class="card">
+                <h3>Remaining</h3>
+                <p id="remainingDisplay">KES 0.00</p>
+            </div>
+
+            <div class="card">
+                <h3>Expense Count</h3>
+                <p id="countDisplay">0</p>
+            </div>
+
+        </section>
+
+
+        <!-- Budget Status -->
+        <section class="card">
+
+            <h2 id="statusTitle">
+                Ready to get started
+            </h2>
+
+            <span id="statusBadge" class="badge neutral">
+                Waiting
+            </span>
+
+            <p id="statusMessage">
+                Set your budget to begin tracking your spending.
+            </p>
+
+            <div class="progress-container">
+                <div id="progressBar"></div>
+            </div>
+
+        </section>
+
+
+        <!-- Expense Form -->
+        <section class="card">
+
+            <h2>Add an Expense</h2>
+
+            <form id="expenseForm">
+
+                <label for="description">
+                    Description
+                </label>
+
+                <input
+                    type="text"
+                    id="description"
+                    placeholder="e.g. Groceries"
+                    required
+                >
+
+
+                <label for="amount">
+                    Amount (KES)
+                </label>
+
+                <input
+                    type="number"
+                    id="amount"
+                    placeholder="Enter amount"
+                    min="0"
+                    step="0.01"
+                    required
+                >
+
+
+                <label for="category">
+                    Category
+                </label>
+
+                <select id="category" required>
+
+                    <option value="">
+                        Select a category
+                    </option>
+
+                    <option value="Food">
+                        Food
+                    </option>
+
+                    <option value="Transport">
+                        Transport
+                    </option>
+
+                    <option value="Bills">
+                        Bills
+                    </option>
+
+                    <option value="Shopping">
+                        Shopping
+                    </option>
+
+                    <option value="Entertainment">
+                        Entertainment
+                    </option>
+
+                    <option value="Other">
+                        Other
+                    </option>
+
+                </select>
+
+
+                <label for="expenseDate">
+                    Date
+                </label>
+
+                <input
+                    type="date"
+                    id="expenseDate"
+                    required
+                >
+
+
+                <button type="submit">
+                    Add Expense
+                </button>
+
+            </form>
+
+            <p id="formMessage" class="form-message"></p>
+
+        </section>
+
+
+        <!-- Expense Records -->
+        <section class="card">
+
+            <div class="section-header">
+
+                <h2>Expense Records</h2>
+
+                <button
+                    id="clearButton"
+                    type="button"
+                    disabled
+                >
+                    Clear All
+                </button>
+
+            </div>
+
+
+            <div id="emptyState">
+                <p>No expenses recorded yet.</p>
+            </div>
+
+
+            <div id="expenseList"></div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
